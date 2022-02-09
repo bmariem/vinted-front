@@ -1,0 +1,99 @@
+.offer {
+  height: calc(100vh - 60px);
+  background-color: #ebedee;
+}
+
+.offer > .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  grid-gap: 30px;
+  gap: 30px;
+}
+
+.offer .offer-description {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 320px;
+  padding: 40px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.offer .offer-description > div:first-child {
+  border-bottom: 1px solid #1111111a;
+}
+
+.offer .offer-price {
+  font-size: 24px;
+  line-height: 32px;
+  color: #111;
+  font-family: "Montserrat", sans-serif;
+}
+
+.offer .offer-details {
+  list-style-type: none;
+  padding: 1rem 0 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.offer .offer-details li {
+  display: flex;
+  padding: 10px 0 5px;
+}
+
+.offer .offer-details li span {
+  font-family: "Montserrat", sans-serif;
+  color: #999;
+  flex: 1 1;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.offer .offer-details li span:nth-child(2n) {
+  color: #666;
+  font-weight: 700;
+}
+
+.offer-title {
+  padding: 2rem 0;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.offer-desc {
+  color: #666;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 2rem;
+}
+
+.offer-owner {
+  display: flex;
+  align-items: center;
+}
+
+.offer-owner > img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background: #09b1ba;
+  border: 1px solid #09b1ba;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 16px;
+  height: 36px;
+  padding: 0 16px;
+  line-height: 36px;
+  margin-top: 32px;
+}
