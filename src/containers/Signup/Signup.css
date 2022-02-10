@@ -1,0 +1,98 @@
+.signup > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.signup .title {
+  font-family: "Montserrat", sans-serif;
+  margin: 2rem 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.signup-form {
+  display: flex;
+  padding: 1.5rem;
+  width: 350px;
+  margin: auto;
+  flex-direction: column;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+}
+
+.signup-form input {
+  border: none;
+  border-bottom: 1px solid #2cb1ba;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.signup-form input:focus-visible {
+  outline: auto 1px #2cb1ba;
+}
+
+.signup-form input::placeholder {
+  color: #cbcccd;
+  font-size: 18px;
+}
+
+.signup .container .error-message {
+  color: #af2727;
+  font-size: 15px;
+  padding: 1rem 0;
+}
+
+.signup .newsletter-checkbox {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.signup .newsletter-checkbox > div {
+  display: flex;
+}
+
+.signup .signup-form .checkbox {
+  transform: scale(2);
+  height: auto;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.signup-form input:focus-visible {
+  outline: none;
+}
+
+.signup .signup-form span {
+  color: #666;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signup .signup-form p {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  color: #999;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.signup-form .btn {
+  font-family: "Montserrat", sans-serif;
+  background-color: #2cb1ba;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.signup .container .login-link {
+  margin: 2rem 0;
+  color: #2cb1ba;
+  font-size: 15px;
+}

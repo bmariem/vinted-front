@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 // Assets
 import logo from "../../assets/images/logo.png";
@@ -9,6 +10,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handlelogoutClick = () => {
+    Cookies.remove("token");
+    navigate("/");
+  };
+
   return (
     <div className="header-container">
       <Link to={"/"}>
@@ -24,17 +32,26 @@ const Header = () => {
         <FontAwesomeIcon icon="search" className="search-input-icon" />
       </div>
 
-      <button className="button-logout">Se déconnecter</button>
+      {Cookies.get("token") ? (
+        <button className="button-logout" onClick={handlelogoutClick}>
+          Se déconnecter
+        </button>
+      ) : (
+        <div>
+          <Link
+            className="btn button-login-signup button-signup"
+            to={"/Signup"}
+          >
+            S'inscrire
+          </Link>
 
-      <div>
-        <button className="header-button button-login-signup button-signup">
-          S'inscrire
-        </button>
-        <button className="header-button button-login-signup">
-          Se connecter
-        </button>
-      </div>
-      <button className="header-button button-sold">Vends tes articles</button>
+          <Link className="btn button-login-signup button-signup" to={"/Login"}>
+            Se connecter
+          </Link>
+        </div>
+      )}
+
+      <button className="button-sold">Vends tes articles</button>
     </div>
   );
 };

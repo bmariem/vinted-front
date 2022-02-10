@@ -5,19 +5,20 @@
   max-width: 1280px;
   margin: auto;
   padding: 10px 0;
+  border-bottom: 1px solid #f4f4f4;
 }
 
-.header-logo {
+.header-container .header-logo {
   height: 30px;
   cursor: pointer;
   margin-left: 10px;
 }
 
-.search-container {
+.header-container .search-container {
   position: relative;
 }
 
-.search-input {
+.header-container .search-input {
   font-family: "Montserrat", sans-serif;
   width: 590px;
   padding-left: 40px;
@@ -26,57 +27,60 @@
   height: 37px;
   border: none;
   outline: none;
-  font-family: "Maison Neue";
   font-size: 16px;
 }
 
-.search-input::placeholder {
+.header-container .search-input::placeholder {
   font-family: "Montserrat", sans-serif;
   color: #cbcccd;
   font-size: 16px;
 }
 
-.search-input-icon {
+.header-container .search-input-icon {
   position: absolute;
   left: 7px;
   top: 12px;
   color: #bbbbbb;
 }
 
-.header-button {
+.header-container .btn {
   height: 30px;
   width: auto;
   border: 1px solid #2cb1ba;
   border-radius: 5px;
-  font-family: "Maison Neue";
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   outline: none;
   padding: 5px 10px;
 }
 
-.button-login-signup {
+.header-container .button-login-signup {
   background-color: white;
   color: #2cb1ba;
   font-family: "Montserrat", sans-serif;
+  text-decoration: none;
 }
 
-.button-sold {
+.header-container .button-sold {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid #2cb1ba;
+  margin: 0 10px 0;
   background-color: #2cb1ba;
   color: white;
   font-family: "Montserrat", sans-serif;
 }
 
-.button-signup {
+.header-container .button-signup {
   margin-right: 20px;
   font-family: "Montserrat", sans-serif;
 }
 
-.button-logout {
+.header-container .button-logout {
   height: 30px;
   padding: 5px 10px;
   font-family: "Montserrat", sans-serif;
   border-radius: 5px;
-  font-family: "Maison Neue";
   font-size: 14px;
   outline: none;
   border: none;

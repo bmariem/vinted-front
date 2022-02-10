@@ -1,0 +1,65 @@
+.login > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login .title {
+  font-family: "Montserrat", sans-serif;
+  margin: 2rem 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.login-form {
+  display: flex;
+  padding: 1.5rem;
+  width: 350px;
+  margin: auto;
+  flex-direction: column;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 1px solid #2cb1ba;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.login-form input:focus-visible {
+  outline: auto 1px #2cb1ba;
+}
+
+.login-form input::placeholder {
+  color: #cbcccd;
+  font-size: 18px;
+}
+
+.login .container .error-message {
+  color: #af2727;
+  font-size: 15px;
+  padding: 1rem 0;
+}
+
+.login-form .btn {
+  font-family: "Montserrat", sans-serif;
+  background-color: #2cb1ba;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.login .container .signup-link {
+  margin: 2rem 0;
+  color: #2cb1ba;
+  font-size: 15px;
+}
