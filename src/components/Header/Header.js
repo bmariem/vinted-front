@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// Assets
 import logo from "../../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,9 +11,9 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header-container">
-      <div>
+      <Link to={"/"}>
         <img className="header-logo" src={logo} alt="vinted" />
-      </div>
+      </Link>
 
       <div className="search-container">
         <input

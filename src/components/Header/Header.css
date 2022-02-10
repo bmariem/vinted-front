@@ -7,10 +7,6 @@
   padding: 10px 0;
 }
 
-.header-container > div:first-child {
-  cursor: pointer;
-}
-
 .header-logo {
   height: 30px;
   cursor: pointer;
