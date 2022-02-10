@@ -4,7 +4,6 @@ import axios from "axios";
 
 // Components
 import Spinner from "../../components/Spinner/Spinner";
-import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
 
 import imgEffect from "../../assets/images/tear.svg";
