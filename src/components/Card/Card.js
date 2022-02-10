@@ -20,12 +20,17 @@ const Card = ({ offer }) => {
           alt={offer.owner.account.username}
         />
         <div className="card-product-infos">
-          <span className="price">{offer.product_price} €</span>
+          {offer.product_price && (
+            <span className="price">{offer.product_price} €</span>
+          )}
+
           {offer.product_details.map((detail, index) => {
             return (
               <div key={index}>
-                <span className="marque">{detail.MARQUE}</span>
-                <span className="size">{detail.TAILLE}</span>
+                {detail.MARQUE && (
+                  <span className="marque">{detail.MARQUE}</span>
+                )}
+                {detail.TAILLE && <span className="size">{detail.TAILLE}</span>}
               </div>
             );
           })}
