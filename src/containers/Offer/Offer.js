@@ -11,7 +11,7 @@ import "./Offer.css";
 
 const Offer = () => {
   // récupérer l'id de l'article envoyé lors de la navigation
-  const params = useParams();
+  const { id } = useParams();
 
   // STATES
   const [data, setData] = useState({});
@@ -21,7 +21,7 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offer/${params.id}`
+          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
 
         setData(response.data);
@@ -31,7 +31,7 @@ const Offer = () => {
       }
     };
     fetchData();
-  }, [params.id]);
+  }, [id]);
 
   return isLoading ? (
     <Spinner />
