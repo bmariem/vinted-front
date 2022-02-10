@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./containers/Home/Home";
 import Offer from "./containers/Offer/Offer";
 
+// Components
+import Header from "./components/Header/Header";
+
 // CSS
 import "./App.css";
 
@@ -15,12 +18,15 @@ library.add(faSearch);
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/offer/:id" element={<Offer />} />
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/offer/:id" element={<Offer />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 

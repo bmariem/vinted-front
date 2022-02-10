@@ -37,8 +37,6 @@ const Home = () => {
     <Spinner />
   ) : (
     <div className="Home">
-      <Header />
-
       <div className="home-bg-img">
         <img src={imgEffect} alt="forme" className="home-forme" />
         <div>
