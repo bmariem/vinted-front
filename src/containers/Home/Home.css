@@ -1,4 +1,4 @@
-.cards {
+.Home .cards {
   max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
@@ -18,6 +18,14 @@
 .home-bg-img > div {
   width: 1280px;
   margin: auto;
+}
+
+.home-img-shape {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
 }
 
 .home-msg {
@@ -47,17 +55,45 @@
   margin-top: 32px;
 }
 
-.home-forme {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 80px;
-  pointer-events: none;
+.Home .home-pagination {
+  max-width: 1280px;
+  padding: 0;
+  margin: 0 30px;
 }
-.home-card-wrapper {
-  width: 1280px;
+
+.Home .home-pagination .pagination {
   display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  margin-top: 30px;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+}
+
+.Home .home-pagination .pagination li {
+  width: 48px;
+  padding: 16px 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.Home .home-pagination .pagination li a {
+  color: rgb(153, 153, 153);
+}
+
+.Home .home-pagination .pagination li.active {
+  background-color: rgba(17, 17, 17, 0.04);
+}
+
+.Home .home-pagination .pagination li.active a {
+  outline: 0;
+  color: rgb(17, 17, 17);
+}
+
+.Home .home-pagination .pagination li.previous.disabled,
+.Home .home-pagination .pagination li.next.disabled {
+  display: none;
 }
