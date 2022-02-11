@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Carousel from "react-multi-carousel";
 
 // Components
 import Spinner from "../../components/Spinner/Spinner";
 
 //CSS
 import "./Offer.css";
+import "react-multi-carousel/lib/styles.css";
 
 const Offer = () => {
   // récupérer l'id de l'article envoyé lors de la navigation
@@ -33,15 +35,66 @@ const Offer = () => {
     fetchData();
   }, [id]);
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return isLoading ? (
     <Spinner />
   ) : (
     <div className="Offer">
-      {/* Récuperer toutes les infos d'une offre  */}
+      {/* get all infos about an offer  */}
       <div className="offer">
         <div className="container">
-          <div className="offer-picture">
-            <img src={data.product_image.secure_url} alt={data.product_name} />
+          <div
+            className={
+              data.product_pictures.length > 1
+                ? "offer-pictures"
+                : "offer-picture"
+            }
+          >
+            {data.product_pictures.length > 1 ? (
+              <Carousel
+                responsive={responsive}
+                infinite={true}
+                autoPlaySpeed={1000}
+                customTransition="all .5"
+                showDots={true}
+              >
+                {data.product_pictures.map((picture) => {
+                  return (
+                    <img
+                      key={picture.asset_id}
+                      src={picture.secure_url}
+                      className="carousel-img"
+                      alt="product"
+                    />
+                  );
+                })}
+              </Carousel>
+            ) : (
+              <img
+                className="one-picture"
+                src={data.product_image.secure_url}
+                alt={data.product_name}
+              />
+            )}
           </div>
           <div className="offer-description">
             <div>
