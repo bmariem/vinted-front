@@ -5,8 +5,6 @@ import Cookies from "js-cookie";
 // containers
 import Home from "./containers/Home/Home";
 import Offer from "./containers/Offer/Offer";
-import Signup from "./containers/Signup/Signup";
-import Login from "./containers/Login/Login";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 
 // Components
@@ -44,8 +42,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/signup" element={<Signup setUser={setUser} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

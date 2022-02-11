@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // Components
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 
 // CSS
 import "./Signup.css";
@@ -129,9 +129,9 @@ const Signup = ({ setUser }) => {
           )}
         </form>
 
-        <Link className="login-link" to="/Login">
+        {/* <Link className="login-link" to="/Login">
           Tu as déjà un compte ? Connecte-toi !
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

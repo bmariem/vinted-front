@@ -3,19 +3,19 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .login .title {
   font-family: "Montserrat", sans-serif;
-  margin: 2rem 0;
+  margin: 1.5rem 0 1rem;
   font-size: 24px;
   font-weight: 400;
 }
 
 .login-form {
   display: flex;
-  padding: 1.5rem;
+  padding: 1rem;
   width: 350px;
   margin: auto;
   flex-direction: column;

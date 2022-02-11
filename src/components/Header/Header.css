@@ -43,25 +43,8 @@
   color: #bbbbbb;
 }
 
-.header-container .btn {
-  height: 30px;
-  width: auto;
-  border: 1px solid #2cb1ba;
-  border-radius: 5px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  outline: none;
-  padding: 5px 10px;
-}
-
+.header-container .button-sold,
 .header-container .button-login-signup {
-  background-color: white;
-  color: #2cb1ba;
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-}
-
-.header-container .button-sold {
   border-radius: 5px;
   padding: 5px 10px;
   border: 1px solid #2cb1ba;
@@ -71,9 +54,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.header-container .button-signup {
-  margin-right: 20px;
-  font-family: "Montserrat", sans-serif;
+.header-container .button-login-signup {
+  background-color: white;
+  color: #2cb1ba;
+  text-decoration: none;
+  margin-right: 5px;
 }
 
 .header-container .button-logout {
@@ -86,4 +71,29 @@
   border: none;
   background-color: #c2175b;
   color: white;
+}
+
+/* MODAL */
+.ReactModalPortal {
+  width: 400px;
+}
+
+.ReactModalPortal .close-modal {
+  position: absolute;
+  text-decoration: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  right: 20px;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ReactModalPortal .close-modal:focus-visible,
+.ReactModalPortal .close-modal:hover {
+  outline: 0;
+  background-color: #ececec;
 }
