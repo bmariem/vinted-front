@@ -1,0 +1,39 @@
+.NotFoundPage-container {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.NotFoundPage-container img {
+  object-fit: contain;
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+}
+
+.NotFoundPage-container h2 {
+  font-size: 24px;
+  margin: 30px 0 20px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.NotFoundPage-container p {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(102, 102, 102);
+}
+
+.NotFoundPage-container button {
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #2cb1ba;
+  margin-top: 30px;
+  background-color: #2cb1ba;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
