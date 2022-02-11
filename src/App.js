@@ -21,6 +21,8 @@ library.add(faSearch);
 function App() {
   // STATES
   const [token, setToken] = useState(Cookies.get("token") || null); // stay connected if user refresh the page or leave it
+  const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
+  const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
 
   const setUser = (token) => {
     // if token exists
@@ -38,7 +40,14 @@ function App() {
 
   return (
     <Router>
-      <Header token={token} setUser={setUser} />
+      <Header
+        token={token}
+        setUser={setUser}
+        modalSignupIsOpen={modalSignupIsOpen}
+        setSignupIsOpen={setSignupIsOpen}
+        modalLoginIsOpen={modalLoginIsOpen}
+        setLoginIsOpen={setLoginIsOpen}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />

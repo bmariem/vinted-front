@@ -9,7 +9,7 @@ import Spinner from "../Spinner/Spinner";
 // CSS
 import "./Signup.css";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -132,6 +132,18 @@ const Signup = ({ setUser }) => {
         {/* <Link className="login-link" to="/Login">
           Tu as déjà un compte ? Connecte-toi !
         </Link> */}
+
+        <p
+          className="login-link"
+          onClick={() => {
+            // close Signup Modal
+            setSignupIsOpen(false);
+            // Open Login Modal
+            setLoginIsOpen(true);
+          }}
+        >
+          Pas encore de compte ? Inscris-toi !
+        </p>
       </div>
     </div>
   );

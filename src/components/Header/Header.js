@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 
@@ -13,10 +13,17 @@ import Login from "../Login/Login";
 // CSS
 import "./Header.css";
 
-const Header = ({ token, setUser }) => {
+const Header = ({
+  token,
+  setUser,
+  modalSignupIsOpen,
+  setSignupIsOpen,
+  modalLoginIsOpen,
+  setLoginIsOpen,
+}) => {
   // STATES
-  const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
-  const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
+  // const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
+  // const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handlelogoutClick = () => {
@@ -97,7 +104,11 @@ const Header = ({ token, setUser }) => {
             <button onClick={closeSignupModal} className="close-modal">
               X
             </button>
-            <Signup setUser={setUser} />
+            <Signup
+              setUser={setUser}
+              setSignupIsOpen={setSignupIsOpen}
+              setLoginIsOpen={setLoginIsOpen}
+            />
           </Modal>
 
           {/* open modal to signup */}
@@ -116,7 +127,11 @@ const Header = ({ token, setUser }) => {
             <button onClick={closeLoginModal} className="close-modal">
               X
             </button>
-            <Login setUser={setUser} />
+            <Login
+              setUser={setUser}
+              setSignupIsOpen={setSignupIsOpen}
+              setLoginIsOpen={setLoginIsOpen}
+            />
           </Modal>
         </div>
       )}
