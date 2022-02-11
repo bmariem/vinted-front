@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 
 // Assets
 import logo from "../../assets/images/logo.png";
@@ -9,11 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // CSS
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ token, setUser }) => {
   const navigate = useNavigate();
 
   const handlelogoutClick = () => {
-    Cookies.remove("token");
+    setUser(null);
+    // Redirection vers home page
     navigate("/");
   };
 
@@ -32,7 +32,7 @@ const Header = () => {
         <FontAwesomeIcon icon="search" className="search-input-icon" />
       </div>
 
-      {Cookies.get("token") ? (
+      {token ? (
         <button className="button-logout" onClick={handlelogoutClick}>
           Se déconnecter
         </button>
