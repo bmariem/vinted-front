@@ -27,14 +27,14 @@ function App() {
   const setUser = (token) => {
     // if token exists
     if (token) {
-      // => save in the cookies for four days (in the browser session=
+      // => save it in the cookies for four days (in the browser session)
       Cookies.set("token", token, { expires: 4 });
     } else {
       // delete token in cookies
       Cookies.remove("token");
     }
 
-    // update the state of toekn
+    // update the state of token
     setToken(token);
   };
 
