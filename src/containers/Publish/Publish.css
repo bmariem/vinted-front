@@ -132,6 +132,13 @@
   color: #949697;
 }
 
+.publish .box-text-content .error-message {
+  color: #af2727;
+  font-size: 15px;
+  padding: 1rem 0;
+  font-family: "Montserrat", sans-serif;
+}
+
 .publish .box-btn {
   display: flex;
   justify-content: flex-end;

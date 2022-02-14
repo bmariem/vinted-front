@@ -3,9 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../config/api";
 
-// Components
-import Spinner from "../Spinner/Spinner";
-
 // CSS
 import "./Signup.css";
 
@@ -15,14 +12,12 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSignupSubmit = async (event) => {
     try {
       event.preventDefault();
-      setIsLoading(true);
       const response = await axios.post(
         // create a new User
         // axios.post(URL, data)
@@ -38,7 +33,6 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
       if (response.data.token) {
         // save token in cookies
         setUser(response.data.token);
-        setIsLoading(false);
 
         // Redirect user to home page
         navigate("/");
@@ -52,7 +46,6 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
       console.log("Catch Error => ", error.response); //data: {message: 'This email already has an account'}
       if (error.response.status === 409) {
         setErrorMessage("Cette adresse e-mail est déjà attribué à un compte");
-        setIsLoading(false);
       }
     }
   };
@@ -116,17 +109,9 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
             </p>
           </div>
 
-          {isLoading ? (
-            <Spinner />
-          ) : (
-            <button
-              className="btn"
-              disabled={isLoading ? true : false}
-              type="submit"
-            >
-              S'inscrire
-            </button>
-          )}
+          <button className="btn" type="submit">
+            S'inscrire
+          </button>
         </form>
 
         <p

@@ -52,6 +52,7 @@ const Publish = ({ token }) => {
     } catch (error) {
       console.log(error.message);
 
+      console.log("Catch Error => ", error.response);
       if (error.response.status === 400) {
         setErrorMessage("Le prix, le titre et l'image du produit sont requis");
       }
@@ -192,11 +193,15 @@ const Publish = ({ token }) => {
               />
             </div>
           </section>
-          <section>
-            {errorMessage && (
-              <span className="error-message">{errorMessage}</span>
-            )}
-          </section>
+
+          {errorMessage && (
+            <section className="box-text-content">
+              <div className="box-text">
+                <span className="error-message">{errorMessage}</span>{" "}
+              </div>
+            </section>
+          )}
+
           <section className="box-btn">
             <button type="submit" className="form-validation">
               Ajouter
@@ -206,7 +211,7 @@ const Publish = ({ token }) => {
       </div>
     </div>
   ) : (
-    // rediriger vers la pop up de login
+    // rediriger vers la home page
     <Navigate to="/" />
   );
 };

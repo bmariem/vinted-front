@@ -21,9 +21,6 @@ const Header = ({
   modalLoginIsOpen,
   setLoginIsOpen,
 }) => {
-  // STATES
-  // const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
-  // const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handlelogoutClick = () => {
@@ -64,9 +61,9 @@ const Header = ({
       // user authenticated => navigate to publish page
       navigate("/offer/publish");
     } else {
-      // user not authenticated => redirect to login modal
+      // user not authenticated => set loginModal on true & redirect to targetUrl
       setLoginIsOpen(true);
-      navigate("/");
+      navigate("/?target_url=/offer/publish");
     }
   };
 

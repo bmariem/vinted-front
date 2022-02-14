@@ -51,12 +51,12 @@ function App() {
         setLoginIsOpen={setLoginIsOpen}
       />
       <Routes>
-        <Route path={routes.HOME} element={<Home />} />
-        <Route path={routes.OFFER} element={<Offer />} />
         <Route
-          path={routes.PUBLISH}
-          element={<Publish token={token} setLoginIsOpen={setLoginIsOpen} />}
+          path={routes.HOME}
+          element={<Home token={token} setLoginIsOpen={setLoginIsOpen} />}
         />
+        <Route path={routes.OFFER} element={<Offer />} />
+        <Route path={routes.PUBLISH} element={<Publish token={token} />} />
         <Route path={routes.NOTFOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
     </Router>

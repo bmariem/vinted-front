@@ -1,10 +1,7 @@
 // Lib
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "../../config/api";
-
-// Components
-import Spinner from "../Spinner/Spinner";
 
 // CSS
 import "./Login.css";
@@ -13,15 +10,17 @@ const Login = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const useQuery = () => {
+    return new URLSearchParams(useLocation().search);
+  };
+  let query = useQuery();
 
   const handleLoginSubmit = async (event) => {
     try {
       event.preventDefault();
-      setIsLoading(true);
-
       // Find a User
       // axios.post(URL, data)
       const response = await axios.post("/user/login", {
@@ -32,10 +31,15 @@ const Login = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
       if (response.data.token) {
         // save token in cookies
         setUser(response.data.token);
-        setIsLoading(false);
 
         // Redirect user to home page
-        navigate("/");
+        const target_url = query.get("target_url");
+        if (target_url != null) {
+          navigate(target_url);
+        } else {
+          navigate("/");
+        }
+        setLoginIsOpen(false);
       } else {
         alert("Une erreur est survenue, veuillez réssayer.");
       }
@@ -48,7 +52,6 @@ const Login = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
 
       if (error.response.status === 400 || error.response.status === 401) {
         setErrorMessage("Adresse e-mail ou mot de passe non valide");
-        setIsLoading(false);
       }
     }
   };
@@ -82,17 +85,9 @@ const Login = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
             <span className="error-message">{errorMessage}</span>
           )}
 
-          {isLoading ? (
-            <Spinner />
-          ) : (
-            <button
-              className="btn"
-              disabled={isLoading ? true : false}
-              type="submit"
-            >
-              Se connecter
-            </button>
-          )}
+          <button className="btn" type="submit">
+            Se connecter
+          </button>
         </form>
 
         <p

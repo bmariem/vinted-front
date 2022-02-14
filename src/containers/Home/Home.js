@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../config/api";
 import ReactPaginate from "react-paginate";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import Spinner from "../../components/Spinner/Spinner";
@@ -12,7 +13,7 @@ import imgEffect from "../../assets/images/tear.svg";
 // CSS
 import "./Home.css";
 
-const Home = () => {
+const Home = ({ token, setLoginIsOpen }) => {
   // STATES
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,19 @@ const Home = () => {
 
   const handlePageClick = (event) => {
     setPage(event.selected + 1);
+  };
+
+  const navigate = useNavigate();
+
+  const handlePublishClick = (token) => {
+    if (token) {
+      // user authenticated => navigate to publish page
+      navigate("/offer/publish");
+    } else {
+      // user not authenticated => set loginModal on true & redirect to targetUrl
+      setLoginIsOpen(true);
+      navigate("/?target_url=/offer/publish");
+    }
   };
 
   useEffect(() => {
@@ -53,7 +67,9 @@ const Home = () => {
         <div>
           <div className="home-msg">
             Prêts à faire du tri dans vos placards ?
-            <button>Commencer à vendre</button>
+            <button onClick={() => handlePublishClick(token)}>
+              Commencer à vendre
+            </button>
           </div>
         </div>
       </div>
