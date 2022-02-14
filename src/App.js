@@ -25,6 +25,10 @@ function App() {
   const [token, setToken] = useState(Cookies.get("token") || null); // stay connected if user refresh the page or leave it
   const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
   const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
+  const [title, setTitle] = useState(""); // filter => Search offers by title
+  const handleSearch = (event) => {
+    setTitle(event.target.value);
+  };
 
   const setUser = (token) => {
     // if token exists
@@ -49,11 +53,14 @@ function App() {
         setSignupIsOpen={setSignupIsOpen}
         modalLoginIsOpen={modalLoginIsOpen}
         setLoginIsOpen={setLoginIsOpen}
+        handleSearch={handleSearch}
       />
       <Routes>
         <Route
           path={routes.HOME}
-          element={<Home token={token} setLoginIsOpen={setLoginIsOpen} />}
+          element={
+            <Home token={token} setLoginIsOpen={setLoginIsOpen} title={title} />
+          }
         />
         <Route path={routes.OFFER} element={<Offer />} />
         <Route path={routes.PUBLISH} element={<Publish token={token} />} />

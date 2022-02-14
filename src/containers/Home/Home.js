@@ -13,7 +13,7 @@ import imgEffect from "../../assets/images/tear.svg";
 // CSS
 import "./Home.css";
 
-const Home = ({ token, setLoginIsOpen }) => {
+const Home = ({ token, setLoginIsOpen, title }) => {
   // STATES
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +43,9 @@ const Home = ({ token, setLoginIsOpen }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/offers?page=${page}&limit=${limit}`);
+        const response = await axios.get(
+          `/offers?page=${page}&limit=${limit}&title=${title}`
+        );
 
         // update data state with all the offers
         setData(response.data);
@@ -56,7 +58,7 @@ const Home = ({ token, setLoginIsOpen }) => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page, title]);
 
   return isLoading ? (
     <Spinner />
@@ -76,7 +78,6 @@ const Home = ({ token, setLoginIsOpen }) => {
 
       <div className="cards">
         {/* Get all offers */}
-
         {data.offers.map((offer) => {
           return <Card offer={offer} key={offer._id} />;
         })}

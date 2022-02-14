@@ -20,6 +20,7 @@ const Header = ({
   setSignupIsOpen,
   modalLoginIsOpen,
   setLoginIsOpen,
+  handleSearch,
 }) => {
   const navigate = useNavigate();
 
@@ -82,6 +83,7 @@ const Header = ({
           type="text"
           className="search-input"
           placeholder="Recherche des articles"
+          onChange={(event) => handleSearch(event)}
         />
         <FontAwesomeIcon icon="search" className="search-input-icon" />
       </div>
