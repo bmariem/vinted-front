@@ -1,6 +1,7 @@
 const routes = {
   HOME: "/",
   OFFER: "/offer/:id",
+  PUBLISH: "/offer/publish",
   NOTFOUNDPAGE: "*",
 };
 

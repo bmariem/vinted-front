@@ -129,10 +129,6 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
           )}
         </form>
 
-        {/* <Link className="login-link" to="/Login">
-          Tu as déjà un compte ? Connecte-toi !
-        </Link> */}
-
         <p
           className="login-link"
           onClick={() => {

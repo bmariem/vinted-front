@@ -6,6 +6,7 @@ import routes from "./config/routes";
 // containers
 import Home from "./containers/Home/Home";
 import Offer from "./containers/Offer/Offer";
+import Publish from "./containers/Publish/Publish";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 
 // Components
@@ -52,6 +53,10 @@ function App() {
       <Routes>
         <Route path={routes.HOME} element={<Home />} />
         <Route path={routes.OFFER} element={<Offer />} />
+        <Route
+          path={routes.PUBLISH}
+          element={<Publish token={token} setLoginIsOpen={setLoginIsOpen} />}
+        />
         <Route path={routes.NOTFOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
     </Router>

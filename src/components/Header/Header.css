@@ -16,11 +16,13 @@
 
 .header-container .search-container {
   position: relative;
+  flex-grow: 2;
+  margin: 0 40px;
 }
 
 .header-container .search-input {
   font-family: "Montserrat", sans-serif;
-  width: 590px;
+  width: 100%;
   padding-left: 40px;
   background-color: #f5f6f7;
   border-radius: 5px;

@@ -59,8 +59,18 @@ const Header = ({
     },
   };
 
+  const handlePublishOfferClick = (token) => {
+    if (token) {
+      // user authenticated => navigate to publish page
+      navigate("/offer/publish");
+    } else {
+      // user not authenticated => redirect to login modal
+      navigate("/");
+      setLoginIsOpen(true);
+    }
+  };
+
   useEffect(() => {
-    console.log("[Header.js] componentDidMount");
     Modal.setAppElement(".header-container");
   }, []);
 
@@ -80,11 +90,9 @@ const Header = ({
       </div>
 
       {token ? (
-        <>
-          <button className="button-logout" onClick={handlelogoutClick}>
-            Se déconnecter
-          </button>
-        </>
+        <button className="button-logout" onClick={handlelogoutClick}>
+          Se déconnecter
+        </button>
       ) : (
         <div>
           {/* open modal to signup */}
@@ -136,7 +144,12 @@ const Header = ({
         </div>
       )}
 
-      <button className="button-sold">Vends tes articles</button>
+      <button
+        className="button-sold"
+        onClick={() => handlePublishOfferClick(token)}
+      >
+        Vends tes articles
+      </button>
     </div>
   );
 };
