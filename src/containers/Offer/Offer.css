@@ -25,6 +25,19 @@
   object-fit: cover;
 }
 
+.offer-pictures .react-multi-carousel-dot-list {
+  bottom: 10px;
+}
+
+.offer-pictures .react-multi-carousel-dot--active button {
+  background: #2cb1ba;
+  border-color: #2cb1ba;
+}
+
+.offer-pictures .react-multi-carousel-dot button {
+  border-color: #2cb1ba;
+}
+
 .offer-picture {
   flex-grow: 2;
   text-align: center;

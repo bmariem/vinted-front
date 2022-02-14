@@ -1,6 +1,6 @@
 // Lib
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../config/api";
 import { useParams } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 
@@ -22,9 +22,7 @@ const Offer = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-        );
+        const response = await axios.get(`/offer/${id}`);
 
         setData(response.data);
         setIsLoading(false);

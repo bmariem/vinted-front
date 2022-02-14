@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
+import routes from "./config/routes";
 
 // containers
 import Home from "./containers/Home/Home";
@@ -49,9 +50,9 @@ function App() {
         setLoginIsOpen={setLoginIsOpen}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/offer/:id" element={<Offer />} />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path={routes.HOME} element={<Home />} />
+        <Route path={routes.OFFER} element={<Offer />} />
+        <Route path={routes.NOTFOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

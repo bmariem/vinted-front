@@ -1,7 +1,7 @@
 // Lib
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../config/api";
 
 // Components
 import Spinner from "../Spinner/Spinner";
@@ -26,7 +26,7 @@ const Signup = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
       const response = await axios.post(
         // create a new User
         // axios.post(URL, data)
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "/user/signup",
         {
           username: username,
           email: email,

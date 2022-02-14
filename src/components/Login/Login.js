@@ -1,7 +1,7 @@
 // Lib
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../config/api";
 
 // Components
 import Spinner from "../Spinner/Spinner";
@@ -24,13 +24,10 @@ const Login = ({ setUser, setSignupIsOpen, setLoginIsOpen }) => {
 
       // Find a User
       // axios.post(URL, data)
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const response = await axios.post("/user/login", {
+        email: email,
+        password: password,
+      });
 
       if (response.data.token) {
         // save token in cookies

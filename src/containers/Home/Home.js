@@ -1,6 +1,6 @@
 // Lib
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../config/api";
 import ReactPaginate from "react-paginate";
 
 // Components
@@ -17,25 +17,22 @@ const Home = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [pageCount, setPageCount] = useState(0);
+  const [pageCount, setPageCount] = useState(1);
 
   // Maximum number of offers per page
   const limit = 5;
 
   const handlePageClick = (event) => {
-    console.log(event);
     setPage(event.selected + 1);
   };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?page=${page}&limit=${limit}`
-        );
+        const response = await axios.get(`/offers?page=${page}&limit=${limit}`);
 
         // update data state with all the offers
-        setData(response.data.offers);
+        setData(response.data);
 
         // Calculate the maximum number of pages
         setPageCount(Math.ceil(Number(response.data.count) / limit));
@@ -63,7 +60,8 @@ const Home = () => {
 
       <div className="cards">
         {/* Get all offers */}
-        {data.map((offer) => {
+
+        {data.offers.map((offer) => {
           return <Card offer={offer} key={offer._id} />;
         })}
       </div>

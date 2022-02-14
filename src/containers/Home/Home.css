@@ -91,6 +91,7 @@
 .Home .home-pagination .pagination li.active a {
   outline: 0;
   color: rgb(17, 17, 17);
+  padding: 16px;
 }
 
 .Home .home-pagination .pagination li.previous.disabled,
