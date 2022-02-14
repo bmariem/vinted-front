@@ -8,10 +8,12 @@ const Card = ({ offer }) => {
   return (
     <Link to={`/offer/${offer._id}`} className="card-container">
       <div className="card-avatar">
-        <img
-          src={offer.owner.account.avatar.secure_url}
-          alt={offer.owner.account.username}
-        />
+        {offer.owner.account.avatar && (
+          <img
+            src={offer.owner.account.avatar.secure_url}
+            alt={offer.owner.account.username}
+          />
+        )}
         <span>{offer.owner.account.username}</span>
       </div>
       <div className="card-product">
