@@ -56,6 +56,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.header-container .button-sold:focus-visible,
+.header-container .button-login-signup:focus-visible {
+  outline: none;
+}
+
 .header-container .button-login-signup {
   background-color: white;
   color: #2cb1ba;

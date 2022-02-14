@@ -72,6 +72,18 @@ const Header = ({
 
   useEffect(() => {
     Modal.setAppElement(".header-container");
+
+    const handlePublishOfferClick = (token) => {
+      if (token) {
+        // user authenticated => navigate to publish page
+        navigate("/offer/publish");
+      } else {
+        // user not authenticated => redirect to login modal
+        navigate("/");
+        setLoginIsOpen(true);
+      }
+    };
+    handlePublishOfferClick();
   }, []);
 
   return (

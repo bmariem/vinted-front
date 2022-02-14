@@ -43,8 +43,6 @@ const Publish = ({ token, setLoginIsOpen }) => {
         },
       });
 
-      console.log(response.data);
-
       if (response.data._id) {
         navigate(`/offer/${response.data._id}`);
       } else {
@@ -63,7 +61,7 @@ const Publish = ({ token, setLoginIsOpen }) => {
           <section className="box-file">
             {imageDisplayed ? (
               <div className="box-file-wrapper">
-                <img src={imageDisplayed} alt="image pré-chargée" />
+                <img src={imageDisplayed} alt="visuel produit pré-chargé" />
                 <div
                   className="remove-img-box"
                   onClick={() => {

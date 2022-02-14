@@ -1,5 +1,4 @@
 .publish {
-  border: 1px solid red;
   background-color: #ebedee;
 }
 
@@ -12,7 +11,7 @@
 .publish .title {
   font-size: 24px;
   font-family: "Montserrat", sans-serif;
-  padding: 0 0 40px;
+  padding: 40px 0 30px;
   font-weight: 400;
 }
 
