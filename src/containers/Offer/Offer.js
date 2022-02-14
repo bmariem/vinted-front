@@ -60,39 +60,39 @@ const Offer = () => {
       {/* get all infos about an offer  */}
       <div className="offer">
         <div className="container">
-          <div
-            className={
-              data.product_pictures.length > 1
-                ? "offer-pictures"
-                : "offer-picture"
-            }
-          >
-            {data.product_pictures.length > 1 ? (
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                autoPlaySpeed={1000}
-                customTransition="all .5"
-                showDots={true}
-              >
-                {data.product_pictures.map((picture) => {
-                  return (
-                    <img
-                      key={picture.asset_id}
-                      src={picture.secure_url}
-                      className="carousel-img"
-                      alt="product"
-                    />
-                  );
-                })}
-              </Carousel>
-            ) : (
-              <img
-                className="one-picture"
-                src={data.product_image.secure_url}
-                alt={data.product_name}
-              />
-            )}
+          {/* deal with multiple images in carousel */}
+          {data.product_pictures && (
+            <div className="offer-pictures">
+              {data.product_pictures.length > 1 && (
+                <Carousel
+                  responsive={responsive}
+                  infinite={true}
+                  autoPlaySpeed={1000}
+                  customTransition="all .5"
+                  showDots={true}
+                >
+                  {data.product_pictures.map((picture) => {
+                    return (
+                      <img
+                        key={picture.asset_id}
+                        src={picture.secure_url}
+                        className="carousel-img"
+                        alt="product"
+                      />
+                    );
+                  })}
+                </Carousel>
+              )}
+            </div>
+          )}
+
+          {/* display one image for offer */}
+          <div className="offer-picture">
+            <img
+              className="one-picture"
+              src={data.product_image.secure_url}
+              alt={data.product_name}
+            />
           </div>
           <div className="offer-description">
             <div>
