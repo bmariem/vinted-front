@@ -6,7 +6,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 //CSS
 import "./Publish.css";
 
-const Publish = ({ token, setLoginIsOpen }) => {
+const Publish = ({ token }) => {
   // STATES
   const [file, setFile] = useState({});
   const [imageDisplayed, setImageDisplayed] = useState("");
@@ -18,6 +18,7 @@ const Publish = ({ token, setLoginIsOpen }) => {
   const [condition, setProductCondition] = useState("");
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -50,6 +51,10 @@ const Publish = ({ token, setLoginIsOpen }) => {
       }
     } catch (error) {
       console.log(error.message);
+
+      if (error.response.status === 400) {
+        setErrorMessage("Le prix, le titre et l'image du produit sont requis");
+      }
     }
   };
 
@@ -186,6 +191,11 @@ const Publish = ({ token, setLoginIsOpen }) => {
                 placeholder="0.00 €"
               />
             </div>
+          </section>
+          <section>
+            {errorMessage && (
+              <span className="error-message">{errorMessage}</span>
+            )}
           </section>
           <section className="box-btn">
             <button type="submit" className="form-validation">
