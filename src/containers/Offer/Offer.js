@@ -64,7 +64,7 @@ const Offer = () => {
       <div className="offer">
         <div className="container">
           {/* deal with multiple images in carousel */}
-          {data.product_pictures && data.product_pictures.length > 1 && (
+          {data.product_pictures && data.product_pictures.length > 1 ? (
             <div className="offer-pictures">
               {data.product_pictures.length > 1 && (
                 <Carousel
@@ -87,17 +87,17 @@ const Offer = () => {
                 </Carousel>
               )}
             </div>
-          )}
-
-          {/* display one image for offer */}
-          {!data.product_pictures && data.product_pictures.length < 1 && (
-            <div className="offer-picture">
-              <img
-                className="one-picture"
-                src={data.product_image.secure_url}
-                alt={data.product_name}
-              />
-            </div>
+          ) : (
+            <>
+              {/* display one image for offer */}
+              <div className="offer-picture">
+                <img
+                  className="one-picture"
+                  src={data.product_image.secure_url}
+                  alt={data.product_name}
+                />
+              </div>
+            </>
           )}
           <div className="offer-description">
             <div>
