@@ -1,5 +1,6 @@
 .offer {
   height: calc(100vh - 60px);
+  margin: 67px auto auto;
   background-color: #ebedee;
 }
 

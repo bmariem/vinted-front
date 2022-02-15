@@ -13,6 +13,7 @@
   position: relative;
   background-position: center;
   background-size: cover;
+  margin: 65px auto auto;
 }
 
 .home-bg-img > div {
