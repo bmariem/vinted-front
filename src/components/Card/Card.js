@@ -28,28 +28,27 @@ const Card = ({ offer }) => {
             alt={offer.owner.account.username}
           />
         )}
-        {offer.product_price ||
-          (offer.product_details && (
-            <div className="card-product-infos">
-              {offer.product_price && (
-                <span className="price">{offer.product_price} €</span>
-              )}
+        {(offer.product_price || offer.product_details) && (
+          <div className="card-product-infos">
+            {offer.product_price && (
+              <span className="price">{offer.product_price} €</span>
+            )}
 
-              {offer.product_details &&
-                offer.product_details.map((detail, index) => {
-                  return (
-                    <div key={index}>
-                      {detail.MARQUE && (
-                        <span className="marque">{detail.MARQUE}</span>
-                      )}
-                      {detail.TAILLE && (
-                        <span className="size">{detail.TAILLE}</span>
-                      )}
-                    </div>
-                  );
-                })}
-            </div>
-          ))}
+            {offer.product_details &&
+              offer.product_details.map((detail, index) => {
+                return (
+                  <div key={index}>
+                    {detail.MARQUE && (
+                      <span className="marque">{detail.MARQUE}</span>
+                    )}
+                    {detail.TAILLE && (
+                      <span className="size">{detail.TAILLE}</span>
+                    )}
+                  </div>
+                );
+              })}
+          </div>
+        )}
       </div>
     </Link>
   );

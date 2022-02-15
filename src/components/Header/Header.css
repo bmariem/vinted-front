@@ -8,7 +8,7 @@
   border-bottom: 1px solid #f4f4f4;
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 999999;
   width: 100%;
   background-color: #fff;
 }
@@ -54,6 +54,8 @@
   border: 1px solid #2cb1ba;
   border-radius: 5px;
   padding: 4px;
+  height: 30px;
+  display: flex;
 }
 
 .header-container .login-signup .button-login-signup:first-of-type {
@@ -67,6 +69,7 @@
 }
 
 .header-container .button-sold {
+  height: 30px;
   padding: 0 10px;
   border: none;
   margin: 0 10px 0;

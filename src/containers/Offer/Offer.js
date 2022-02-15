@@ -90,13 +90,15 @@ const Offer = () => {
           )}
 
           {/* display one image for offer */}
-          <div className="offer-picture">
-            <img
-              className="one-picture"
-              src={data.product_image.secure_url}
-              alt={data.product_name}
-            />
-          </div>
+          {!data.product_pictures && data.product_pictures.length < 1 && (
+            <div className="offer-picture">
+              <img
+                className="one-picture"
+                src={data.product_image.secure_url}
+                alt={data.product_name}
+              />
+            </div>
+          )}
           <div className="offer-description">
             <div>
               <span className="offer-price">{data.product_price} €</span>
