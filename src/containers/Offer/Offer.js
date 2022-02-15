@@ -7,6 +7,9 @@ import Carousel from "react-multi-carousel";
 // Components
 import Spinner from "../../components/Spinner/Spinner";
 
+// img
+import DefaultAvatar from "../../assets/images/default-avatar.png";
+
 //CSS
 import "./Offer.css";
 import "react-multi-carousel/lib/styles.css";
@@ -61,7 +64,7 @@ const Offer = () => {
       <div className="offer">
         <div className="container">
           {/* deal with multiple images in carousel */}
-          {data.product_pictures && (
+          {data.product_pictures && data.product_pictures.length > 1 && (
             <div className="offer-pictures">
               {data.product_pictures.length > 1 && (
                 <Carousel
@@ -110,14 +113,20 @@ const Offer = () => {
               </ul>
             </div>
             <div>
-              <p className="offer-title"> {data.product_name}</p>
-              <p className="offer-desc"> {data.product_description}</p>
+              {data.product_name && (
+                <p className="offer-title"> {data.product_name}</p>
+              )}
+              {data.product_description && (
+                <p className="offer-desc"> {data.product_description}</p>
+              )}
               <div className="offer-owner">
-                {data.owner.account.avatar && (
+                {data.owner.account.avatar ? (
                   <img
                     src={data.owner.account.avatar.secure_url}
                     alt={data.owner.account.username}
                   />
+                ) : (
+                  <img src={DefaultAvatar} alt="default" />
                 )}
 
                 <span>{data.owner.account.username}</span>

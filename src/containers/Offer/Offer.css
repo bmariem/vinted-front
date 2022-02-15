@@ -1,5 +1,4 @@
 .offer {
-  height: calc(100vh - 60px);
   margin: 67px auto auto;
   background-color: #ebedee;
 }
@@ -39,24 +38,23 @@
   border-color: #2cb1ba;
 }
 
-.offer-picture {
+.offer-picture,
+.offer-pictures {
   flex-grow: 2;
   text-align: center;
-}
-
-.offer-picture {
-  flex-grow: 2;
-  text-align: center;
+  border-radius: 5px;
 }
 
 .offer-picture .one-picture {
-  width: 600px;
+  width: 100%;
   object-fit: cover;
   height: auto;
+  border-radius: 5px;
 }
 
 .offer .offer-description {
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   background-color: #fff;
   width: 320px;
