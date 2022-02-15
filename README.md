@@ -1,10 +1,11 @@
 # Vinted : React App
 
-The project **Vinted** was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vinted clone bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can run
+🗄 API : api-vinted-project.herokuapp.com/
 
-### `yarn start`
+🖥 Languages : React, express js & Node Js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🎙 Live version : https://api-vinted-project.herokuapp.com/
+
+⚒ Features : List offers, Signup, Login, Publish offer, Pagination, Search from filters & Pay a product
