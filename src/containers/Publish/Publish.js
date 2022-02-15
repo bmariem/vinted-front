@@ -26,36 +26,36 @@ const Publish = ({ token }) => {
     try {
       event.preventDefault();
 
-      const publishFormData = new FormData();
-      publishFormData.append("picture", file);
-      publishFormData.append("title", title);
-      publishFormData.append("description", description);
-      publishFormData.append("price", price);
-      publishFormData.append("size", size);
-      publishFormData.append("color", color);
-      publishFormData.append("condition", condition);
-      publishFormData.append("city", city);
-      publishFormData.append("brand", brand);
+      if (file && title && price) {
+        const publishFormData = new FormData();
+        publishFormData.append("picture", file);
+        publishFormData.append("title", title);
+        publishFormData.append("description", description);
+        publishFormData.append("price", price);
+        publishFormData.append("size", size);
+        publishFormData.append("color", color);
+        publishFormData.append("condition", condition);
+        publishFormData.append("city", city);
+        publishFormData.append("brand", brand);
 
-      const response = await axios.post("/offer/publish", publishFormData, {
-        headers: {
-          authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+        const response = await axios.post("/offer/publish", publishFormData, {
+          headers: {
+            authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        });
 
-      if (response.data._id) {
-        navigate(`/offer/${response.data._id}`);
+        if (response.data._id) {
+          navigate(`/offer/${response.data._id}`);
+        } else {
+          alert("Une erreur est survenue");
+        }
       } else {
-        alert("Une erreur est survenue");
+        setErrorMessage("Le prix, le titre et l'image du produit sont requis");
       }
     } catch (error) {
       console.log(error.message);
-
       console.log("Catch Error => ", error.response);
-      if (error.response.status === 400) {
-        setErrorMessage("Le prix, le titre et l'image du produit sont requis");
-      }
     }
   };
 
