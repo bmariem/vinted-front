@@ -13,7 +13,9 @@ import "./Payment.css";
 
 const Payment = () => {
   const location = useLocation();
-  const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
+  const stripePromise = loadStripe(
+    "pk_test_51KTTQKJ0o0kwjpd11JooJGVtOLtOVfMW5lEyYQZkox3vx6XGLXavICzYyI5PF9BtN8139IPg3UW17gyPnkEprIU600fGQh6Qea"
+  );
   const { productName, totalPrice, protectionFees, shippingFees, price } =
     location.state;
 
