@@ -30,9 +30,7 @@ const Card = ({ offer }) => {
         )}
         {(offer.product_price || offer.product_details) && (
           <div className="card-product-infos">
-            {offer.product_price && (
-              <span className="price">{offer.product_price} €</span>
-            )}
+            <span className="price">{offer.product_price} €</span>
 
             {offer.product_details &&
               offer.product_details.map((detail, index) => {
