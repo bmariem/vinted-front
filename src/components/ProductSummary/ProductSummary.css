@@ -1,0 +1,38 @@
+.payment-card.summary {
+  background-color: #fff;
+  box-shadow: 0 10px 10px 0 rgb(46 51 51 / 3%);
+  min-width: 320px;
+  padding: 40px 20px;
+}
+
+.payment-card.summary .resume {
+  color: #666;
+}
+
+.payment-card.summary .resume .title {
+  font-size: 14px;
+  color: #999;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+}
+
+.payment-card.summary .resume .content ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #666;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+}
+
+.payment-card.summary .resume .content ul li:last-of-type {
+  color: #000;
+  font-weight: 500;
+  border-top: 1px solid #ebedee;
+  padding-top: 20px;
+}
+
+.payment-card.summary .resume .content ul li span {
+  font-weight: 500;
+}

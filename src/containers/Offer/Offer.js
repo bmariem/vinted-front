@@ -1,7 +1,7 @@
 // Lib
 import React, { useState, useEffect } from "react";
 import axios from "../../config/api";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 
 // Components
@@ -21,6 +21,13 @@ const Offer = () => {
   // STATES
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
+  const price = data.product_price;
+  const protectionFees = (price / 10).toFixed(2);
+  const shippingFees = (protectionFees * 2).toFixed(2);
+  const total = Number(price) + Number(protectionFees) + Number(shippingFees);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,7 +141,22 @@ const Offer = () => {
                 <span>{data.owner.account.username}</span>
               </div>
             </div>
-            <button className="btn">Acheter</button>
+            <button
+              className="btn"
+              onClick={() => {
+                navigate("/payment", {
+                  state: {
+                    productName: data.product_name,
+                    totalPrice: total,
+                    protectionFees: protectionFees,
+                    shippingFees: shippingFees,
+                    price: data.product_price,
+                  },
+                });
+              }}
+            >
+              Acheter
+            </button>
           </div>
         </div>
       </div>

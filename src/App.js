@@ -7,6 +7,7 @@ import routes from "./config/routes";
 import Home from "./containers/Home/Home";
 import Offer from "./containers/Offer/Offer";
 import Publish from "./containers/Publish/Publish";
+import Payment from "./containers/Payment/Payment";
 import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 
 // Components
@@ -17,8 +18,8 @@ import "./App.css";
 
 // ICONS
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-library.add(faSearch);
+import { faSearch, faShieldAlt } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch, faShieldAlt);
 
 function App() {
   // STATES
@@ -73,6 +74,7 @@ function App() {
         />
         <Route path={routes.OFFER} element={<Offer />} />
         <Route path={routes.PUBLISH} element={<Publish token={token} />} />
+        <Route path={routes.PAYMENT} element={<Payment token={token} />} />
         <Route path={routes.NOTFOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
     </Router>

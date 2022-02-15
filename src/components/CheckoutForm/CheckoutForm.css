@@ -1,0 +1,36 @@
+.last-step-payment {
+  width: 100%;
+  text-align: center;
+}
+
+.last-step-payment .payment-btn {
+  border: none;
+  background-color: #979797;
+  color: #fff;
+  border-radius: 4px;
+  padding: 13px 17px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.last-step-payment .legal {
+  font-size: 14px;
+  color: #999;
+  margin: 15px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.last-step-payment .legal svg {
+  margin-right: 5px;
+}
+
+.payment-done {
+  color: #999;
+  margin: 15px 0;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}

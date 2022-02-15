@@ -57,8 +57,8 @@
   border-radius: 5px;
   flex-direction: column;
   background-color: #fff;
-  width: 320px;
-  padding: 40px;
+  min-width: 320px;
+  padding: 40px 20px;
   font-family: "Montserrat", sans-serif;
 }
 
