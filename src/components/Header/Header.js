@@ -73,7 +73,7 @@ const Header = ({
   }, []);
 
   return (
-    <div className="header-container">
+    <header className="header-container">
       <Link to={"/"}>
         <img className="header-logo" src={logo} alt="vinted" />
       </Link>
@@ -149,7 +149,7 @@ const Header = ({
       >
         Vends tes articles
       </button>
-    </div>
+    </header>
   );
 };
 
