@@ -104,7 +104,7 @@ const Header = ({
           Se déconnecter
         </button>
       ) : (
-        <div>
+        <div className="login-signup">
           {/* open modal to signup */}
           <button
             className="button-login-signup button-signup"
