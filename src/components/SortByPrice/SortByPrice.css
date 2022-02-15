@@ -1,0 +1,55 @@
+.sort-by-price {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.sort-by-price span:not(.slider) {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.sort-by-price .switch-asc-desc {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.sort-by-price .switch-asc-desc input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sort-by-price .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #09aeb6;
+  border-radius: 34px;
+}
+
+.sort-by-price .slider:before {
+  position: absolute;
+  text-align: center;
+  content: "⇡";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.sort-by-price input:checked + .slider:before {
+  -webkit-transform: translateX(26px) rotate(180deg);
+  -ms-transform: translateX(26px) rotate(180deg);
+  transform: translateX(26px) rotate(180deg);
+}

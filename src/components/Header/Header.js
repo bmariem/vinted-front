@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Components
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
+import SortByPrice from "../SortByPrice/SortByPrice";
 
 // CSS
 import "./Header.css";
@@ -21,6 +22,8 @@ const Header = ({
   modalLoginIsOpen,
   setLoginIsOpen,
   handleSearch,
+  sortByPrice,
+  setSortByPrice,
 }) => {
   const navigate = useNavigate();
 
@@ -86,6 +89,14 @@ const Header = ({
           onChange={(event) => handleSearch(event)}
         />
         <FontAwesomeIcon icon="search" className="search-input-icon" />
+      </div>
+
+      <div className="price-filter">
+        <SortByPrice
+          sortByPrice={sortByPrice}
+          setSortByPrice={setSortByPrice}
+        />
+        {/* <MinMaxPrice values={values} setMinMaxValues={setMinMaxValues} /> */}
       </div>
 
       {token ? (

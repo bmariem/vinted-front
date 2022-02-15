@@ -22,7 +22,7 @@
 .header-container .search-container {
   position: relative;
   flex-grow: 2;
-  margin: 0 40px;
+  margin: 0 0 0 40px;
 }
 
 .header-container .search-input {

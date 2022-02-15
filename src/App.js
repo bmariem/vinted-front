@@ -26,6 +26,8 @@ function App() {
   const [modalSignupIsOpen, setSignupIsOpen] = useState(false);
   const [modalLoginIsOpen, setLoginIsOpen] = useState(false);
   const [title, setTitle] = useState(""); // filter => Search offers by title
+  const [sortByPrice, setSortByPrice] = useState("price-asc"); // filter => Sort offers by price
+
   const handleSearch = (event) => {
     setTitle(event.target.value);
   };
@@ -54,12 +56,19 @@ function App() {
         modalLoginIsOpen={modalLoginIsOpen}
         setLoginIsOpen={setLoginIsOpen}
         handleSearch={handleSearch}
+        sortByPrice={sortByPrice}
+        setSortByPrice={setSortByPrice}
       />
       <Routes>
         <Route
           path={routes.HOME}
           element={
-            <Home token={token} setLoginIsOpen={setLoginIsOpen} title={title} />
+            <Home
+              token={token}
+              setLoginIsOpen={setLoginIsOpen}
+              title={title}
+              sortByPrice={sortByPrice}
+            />
           }
         />
         <Route path={routes.OFFER} element={<Offer />} />
