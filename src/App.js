@@ -12,6 +12,7 @@ import NotFoundPage from "./containers/NotFoundPage/NotFoundPage";
 
 // Components
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 // CSS
 import "./App.css";
@@ -77,6 +78,7 @@ function App() {
         <Route path={routes.PAYMENT} element={<Payment token={token} />} />
         <Route path={routes.NOTFOUNDPAGE} element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
