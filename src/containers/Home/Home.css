@@ -60,7 +60,7 @@
 .Home .home-pagination {
   max-width: 1280px;
   padding: 0;
-  margin: 0 30px;
+  margin: 0 auto;
 }
 
 .Home .home-pagination .pagination {

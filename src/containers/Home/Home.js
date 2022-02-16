@@ -29,7 +29,7 @@ const Home = ({ token, setLoginIsOpen, title, sortByPrice }) => {
 
   const navigate = useNavigate();
 
-  const handlePublishClick = (token) => {
+  const handlePublishClick = () => {
     if (token) {
       // user authenticated => navigate to publish page
       navigate("/offer/publish");
@@ -69,9 +69,7 @@ const Home = ({ token, setLoginIsOpen, title, sortByPrice }) => {
         <div>
           <div className="home-msg">
             Prêts à faire du tri dans vos placards ?
-            <button onClick={() => handlePublishClick(token)}>
-              Commencer à vendre
-            </button>
+            <button onClick={handlePublishClick}>Commencer à vendre</button>
           </div>
         </div>
       </div>
