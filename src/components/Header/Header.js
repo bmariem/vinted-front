@@ -60,7 +60,7 @@ const Header = ({
     },
   };
 
-  const handlePublishOfferClick = (token) => {
+  const handlePublishOfferClick = () => {
     if (token) {
       // user authenticated => navigate to publish page
       navigate("/offer/publish");
@@ -155,10 +155,7 @@ const Header = ({
           </div>
         )}
 
-        <button
-          className="button-sold"
-          onClick={() => handlePublishOfferClick(token)}
-        >
+        <button className="button-sold" onClick={handlePublishOfferClick}>
           Vends tes articles
         </button>
       </div>
