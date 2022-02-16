@@ -30,7 +30,7 @@ const Card = ({ offer }) => {
         )}
         {(offer.product_price || offer.product_details) && (
           <div className="card-product-infos">
-            <span className="price">{offer.product_price} €</span>
+            <span className="price">{offer.product_price.toFixed(2)} €</span>
 
             {offer.product_details &&
               offer.product_details.map((detail, index) => {

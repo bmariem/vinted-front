@@ -22,7 +22,7 @@ const Offer = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const price = data.product_price;
+  const price = data.product_price.toFixed(2);
   const protectionFees = (price / 10).toFixed(2);
   const shippingFees = (protectionFees * 2).toFixed(2);
   const total = Number(price) + Number(protectionFees) + Number(shippingFees);
@@ -108,7 +108,9 @@ const Offer = () => {
           )}
           <div className="offer-description">
             <div>
-              <span className="offer-price">{data.product_price} €</span>
+              <span className="offer-price">
+                {data.product_price.toFixed(2)} €
+              </span>
               <ul className="offer-details">
                 {data.product_details.map((detail, index) => {
                   const keys = Object.keys(detail);
